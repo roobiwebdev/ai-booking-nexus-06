@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,23 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				purple: {
+					50: '#faf5ff',
+					100: '#f3e8ff',
+					200: '#e9d5ff',
+					300: '#d8b4fe',
+					400: '#c084fc',
+					500: '#a855f7',
+					600: '#9333ea',
+					700: '#7c3aed',
+					800: '#6b21a8',
+					900: '#581c87',
+				},
+				neon: {
+					purple: '#bf00ff',
+					pink: '#ff00ff',
+					blue: '#00ffff',
 				}
 			},
 			borderRadius: {
@@ -84,11 +102,43 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'glow': {
+					'0%, 100%': {
+						boxShadow: '0 0 20px rgba(168, 85, 247, 0.5)',
+					},
+					'50%': {
+						boxShadow: '0 0 40px rgba(168, 85, 247, 0.8), 0 0 60px rgba(191, 0, 255, 0.4)',
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)',
+					},
+					'50%': {
+						transform: 'translateY(-20px)',
+					}
+				},
+				'neon-pulse': {
+					'0%, 100%': {
+						textShadow: '0 0 5px #bf00ff, 0 0 10px #bf00ff, 0 0 15px #bf00ff',
+					},
+					'50%': {
+						textShadow: '0 0 10px #bf00ff, 0 0 20px #bf00ff, 0 0 30px #bf00ff, 0 0 40px #bf00ff',
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'glow': 'glow 3s ease-in-out infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'neon-pulse': 'neon-pulse 2s ease-in-out infinite',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+				'neon-gradient': 'linear-gradient(45deg, #bf00ff, #8b00ff, #6a00ff)',
 			}
 		}
 	},
