@@ -8,7 +8,7 @@ const EditButton: React.FC = () => {
   const [isEditing, setIsEditing] = useState(false);
 
   // Condition pour afficher le bouton (par exemple, si on est en mode dev ou avec un paramètre URL)
-  const showEditButton = process.env.NODE_ENV === 'development' || 
+  const showEditButton = import.meta.env.MODE === 'development' || 
                          window.location.search.includes('edit=true');
 
   if (!showEditButton) {

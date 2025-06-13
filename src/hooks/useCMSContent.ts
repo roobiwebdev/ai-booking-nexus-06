@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { CMSContent } from '@/types/cms';
 
@@ -7,9 +6,9 @@ const CMS_CONFIG = {
   // Mode statique (actuel)
   static: true,
   // URL de l'API Strapi (à configurer plus tard)
-  strapiUrl: process.env.REACT_APP_STRAPI_URL || 'http://localhost:1337',
+  strapiUrl: import.meta.env.VITE_STRAPI_URL || 'http://localhost:1337',
   // Token d'API (à configurer plus tard)  
-  apiToken: process.env.REACT_APP_STRAPI_TOKEN || '',
+  apiToken: import.meta.env.VITE_STRAPI_TOKEN || '',
 };
 
 // Contenu statique par défaut (sera migré vers Strapi)
