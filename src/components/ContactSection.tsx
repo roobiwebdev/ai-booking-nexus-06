@@ -41,8 +41,8 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 w-56 relative">
-      <div className="container mx-auto px-6">
+    <section id="contact" className="py-20 w-full flex flex-col justify-center items-center">
+      <div className="container w-full px-6 flex flex-col justify-center items-center">
         {/* Header */}
         <AnimatedSection>
           <div className="text-center mb-16">
@@ -57,10 +57,10 @@ const ContactSection = () => {
           </div>
         </AnimatedSection>
 
-        <div className="w-full sm:max-w-6xl mx-auto grid justify-center items-center md:justify-start md:items-start lg:grid-cols-2 gap-2 md:gap-12">
+        <div className="w-full sm:max-w-6xl mx-auto grid justify-center items-center md:justify-start md:items-start md:grid-cols-2 gap-y-0 md:gap-12">
           {/* Formulaire de contact */}
           <AnimatedSection>
-            <div className="glass-card rounded-2xl p-8">
+            <div className="w-96 md:w-full glass-card rounded-2xl p-8">
               <div className="flex items-center gap-2 mb-6">
                 <Calendar className="w-6 h-6 text-[#6645E8]" />
                 <h3 className="text-2xl font-bold text-white">Planifier ma démo</h3>
@@ -151,7 +151,7 @@ const ContactSection = () => {
 
                 <Button 
                   type="submit" 
-                  className="w-full bg-gradient-to-r from-[#6645E8] to-[#6645E8] hover:from-[#6645E8] hover:to-[#6645E8] text-white px-8 py-6 rounded-xl font-semibold text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
+                  className="w-full bg-gradient-to-r from-[#6645E8] to-[#6645E8] hover:from-[#6645E8] hover:to-[#6645E8] text-white px-4 sm:px-8 py-4 sm:py-6 rounded-xl font-semibold text-md sm:text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
                 >
                   <Calendar className="w-5 h-5 mr-2" />
                   Réserver ma démo gratuite (30 min)
@@ -166,7 +166,7 @@ const ContactSection = () => {
 
           {/* Informations de contact et processus */}
           <AnimatedSection>
-            <div className="space-y-8">
+            <div className="space-y-0 md:space-y-8">
               {/* Contact direct */}
               <div className="glass-card rounded-2xl p-8">
                 <h3 className="text-2xl font-bold text-white mb-6">Contactez-nous directement</h3>
@@ -249,10 +249,12 @@ const ContactSection = () => {
           </AnimatedSection>
         </div>
 
-        {/* CTA supplémentaire */}
-        <AnimatedSection>
-          <div className="text-center mt-16">
-            <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto">
+       
+      </div>
+       {/* CTA supplémentaire */}
+       <AnimatedSection>
+          <div className="w-full flex flex-col justify-center items-center text-center md:mt-16">
+            <div className="glass-card rounded p-6 mx-auto">
               <h3 className="text-2xl font-bold text-white mb-4">Prêt à transformer votre centre ?</h3>
               <p className="text-gray-300 mb-6">
                 Rejoignez les 500+ centres qui ont déjà automatisé leur gestion avec notre IA
@@ -266,7 +268,6 @@ const ContactSection = () => {
             </div>
           </div>
         </AnimatedSection>
-      </div>
     </section>
   );
 };

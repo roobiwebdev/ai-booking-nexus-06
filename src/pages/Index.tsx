@@ -11,7 +11,7 @@ import Footer from "../components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background w-full overflow-x-hidden">
-      <div className="w-full max-w-[100vw]">
+      <div className="w-full flex flex-col justify-center items-center max-w-[100vw]">
         <HeroSection />
         <BenefitsSection />
         <SocialProofSection />
