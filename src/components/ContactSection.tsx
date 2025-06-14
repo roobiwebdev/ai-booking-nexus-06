@@ -41,7 +41,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
+    <section id="contact" className="py-20 w-56 relative">
       <div className="container mx-auto px-6">
         {/* Header */}
         <AnimatedSection>
