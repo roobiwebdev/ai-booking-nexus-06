@@ -96,7 +96,7 @@ const BenefitsSection = () => {
                         <benefit.icon className="w-6 h-6 text-white" />
                       </div>
                       <div className="ml-4 flex-1">
-                        <h3 className="text-xl font-semibold text-white">{benefit.title}</h3>
+                        <h3 className="text-md sm:text-xl font-semibold text-white">{benefit.title}</h3>
                         <div className="text-sm text-[#8872FC] font-medium">{benefit.metric}</div>
                       </div>
                     </div>
