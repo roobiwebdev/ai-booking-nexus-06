@@ -82,7 +82,7 @@ const FAQSection = () => {
               </p>
               <button 
                 onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-gradient-to-r from-[#6645E8] to-[#6645E8] hover:from-purple-700 hover:to-purple-900 text-white px-4 sm:px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-[#6645E8] to-[#6645E8] hover:from-purple-700 hover:to-purple-900 text-white px-4 sm:px-8 py-4 rounded-xl font-semibold text-md sm:text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
               >
                 Poser ma question en démo
               </button>
