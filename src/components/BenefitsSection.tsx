@@ -88,7 +88,7 @@ const BenefitsSection = () => {
                   key={index}
                   ref={cardRef}
                   onMouseMove={handleMouseMove}
-                  className="relative py-5 px-0 z-20 group overflow-hidden h-56 border border-zinc-800 rounded-xl bg-[radial-gradient(500px_circle_at_var(--cursor-x)_var(--cursor-y),#8872FC_0,transparent,transparent_70%)]"
+                  className="relative py-5 px-0 z-20 group overflow-hidden border border-zinc-800 rounded-xl bg-[radial-gradient(500px_circle_at_var(--cursor-x)_var(--cursor-y),#8872FC_0,transparent,transparent_70%)]"
                 >
                   <div className="space-y-4 relative z-10 p-5 bg-[linear-gradient(180deg,_rgba(24,_24,_27,_0.00)_0%,_rgba(24,_24,_27,_0.00)_100%)]">
                     <div className="flex items-center mb-6">
