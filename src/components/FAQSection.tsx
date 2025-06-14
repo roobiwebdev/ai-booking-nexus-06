@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import AnimatedSection from '@/components/ui/animated-section';
 
 const FAQSection = () => {
   const faqs = [
@@ -42,47 +42,53 @@ const FAQSection = () => {
     <section className="py-20 relative">
       <div className="container mx-auto px-6">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Questions fréquentes
-            <span className="neon-text"> et réponses expertes</span>
-          </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Toutes les réponses à vos questions pour prendre la meilleure décision
-          </p>
-        </div>
+        <AnimatedSection>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Questions fréquentes <br />
+              <span className="inline-flex animate-text-gradient bg-gradient-to-r from-[#9487FC] via-[#6E4DF2] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-transparent"> et réponses expertes</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Toutes les réponses à vos questions pour prendre la meilleure décision
+            </p>
+          </div>
+        </AnimatedSection>
 
         {/* FAQ */}
-        <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqs.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="glass-card rounded-xl border-purple-500/20">
-                <AccordionTrigger className="text-left px-6 py-4 text-white hover:text-purple-300 text-lg font-medium">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-4 text-gray-300 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
+        <AnimatedSection>
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="glass-card rounded-xl border-[#563FC0]-500/20">
+                  <AccordionTrigger className="text-left px-6 py-4 text-white hover:text-[#8D7CFB] text-lg font-medium">
+                    {faq.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="px-6 pb-4 text-gray-300 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </AnimatedSection>
 
         {/* CTA */}
-        <div className="text-center mt-16">
-          <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">Une question spécifique ?</h3>
-            <p className="text-gray-300 mb-6">
-              Échangez directement avec un expert lors de votre démo personnalisée
-            </p>
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-gradient-to-r from-purple-600 to-purple-800 hover:from-purple-700 hover:to-purple-900 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
-            >
-              Poser ma question en démo
-            </button>
+        <AnimatedSection>
+          <div className="text-center mt-16">
+            <div className="glass-card rounded-2xl p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-bold text-white mb-4">Une question spécifique ?</h3>
+              <p className="text-gray-300 mb-6">
+                Échangez directement avec un expert lors de votre démo personnalisée
+              </p>
+              <button 
+                onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-gradient-to-r from-[#6645E8] to-[#6645E8] hover:from-purple-700 hover:to-purple-900 text-white px-4 sm:px-8 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105"
+              >
+                Poser ma question en démo
+              </button>
+            </div>
           </div>
-        </div>
+        </AnimatedSection>
       </div>
     </section>
   );
