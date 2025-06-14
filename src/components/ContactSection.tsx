@@ -41,7 +41,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 w-full flex flex-col justify-center items-center">
+    <section id="contact" className="py-20 my-[-80px] sm:my-0 w-full flex flex-col justify-center items-center">
       <div className="container w-full px-6 flex flex-col justify-center items-center">
         {/* Header */}
         <AnimatedSection>

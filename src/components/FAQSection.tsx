@@ -39,7 +39,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section className="py-20 relative">
+    <section className="py-20 w-4xl relative">
       <div className="container mx-auto px-6">
         {/* Header */}
         <AnimatedSection>
@@ -56,14 +56,14 @@ const FAQSection = () => {
 
         {/* FAQ */}
         <AnimatedSection>
-          <div className="max-w-4xl mx-auto">
-            <Accordion type="single" collapsible className="space-y-4">
+          <div className="sm:w-[70vw] md:w-[50vw] lg:w-[50vw]">
+            <Accordion type="single" collapsible className="w-full space-y-4">
               {faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`} className="glass-card rounded-xl border-[#563FC0]-500/20">
-                  <AccordionTrigger className="text-left px-6 py-4 text-white hover:text-[#8D7CFB] text-lg font-medium">
+                <AccordionItem key={index} value={`item-${index}`} className="w-fullglass-card rounded-xl border-[#563FC0]-500/20">
+                  <AccordionTrigger className="text-left px-6 py-4 text-white hover:text-[#8D7CFB] text-lg font-medium ">
                     {faq.question}
                   </AccordionTrigger>
-                  <AccordionContent className="px-6 pb-4 text-gray-300 leading-relaxed">
+                  <AccordionContent className="w-full px-6 pb-4 text-gray-300 leading-relaxed">
                     {faq.answer}
                   </AccordionContent>
                 </AccordionItem>
