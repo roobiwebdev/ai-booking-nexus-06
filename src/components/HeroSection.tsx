@@ -24,8 +24,8 @@ const HeroSection = () => {
         <AnimatedSection>
           <div className="text-center max-w-5xl mx-auto">
             {/* Badge */}
-            <div className="inline-flex items-center gap-2 rounded-full glass-card mt-4 mb-4 sm:mb-8 sm:mt-0 border-[#513CB3] ">
-              <span className="inline-flex cursor-pointer items-center justify-center rounded-full border border-gray-800 bg-gray-950 px-4 py-1 text-md font-medium text-gray-300 backdrop-blur-3xl">
+            <div className="inline-flex items-center gap-2 rounded-full glass-card my-4 sm:mb-8 sm:mt-0 border-[#513CB3] ">
+              <span className="inline-flex cursor-pointer items-center justify-center rounded-full border border-gray-800 bg-gray-950 px-2 sm:px-4 py-1 text-sm font-normal sm:text-md sm:font-medium text-gray-300 backdrop-blur-3xl">
                 <span className="bg-gradient-to-t from-[#fff] to-[#8678f9] bg-clip-text text-transparent">
                   L'IA révolutionnaire pour centres de formation
                 </span>
@@ -33,7 +33,7 @@ const HeroSection = () => {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-[-1px] sm:leading-tight mt-4 sm:mt-0">
               Automatisez votre centre
               <br />
               <span className="inline-flex animate-text-gradient bg-gradient-to-r from-[#9487FC] via-[#6E4DF2] to-[#c7d2fe] bg-[200%_auto] bg-clip-text text-transparent">
@@ -42,7 +42,7 @@ const HeroSection = () => {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-1 sm:leading-relaxed">
               Gagnez 15h par semaine grâce à notre outil IA tout-en-un : gestion
               administrative automatique, conformité Qualiopi, création de
               contenus et suivi des apprenants.
@@ -52,19 +52,26 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               <span className="relative inline-block overflow-hidden rounded-full p-[1px]">
                 <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
-                <div className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-gray-950 px-8 py-2 text-lg font-medium text-gray-50 backdrop-blur-3xl ">
+                <div className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-gray-950 px-4 sm:px-8 py-2 text-lg font-medium text-gray-50 backdrop-blur-3xl ">
                   Réserver une démo gratuite
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </div>
               </span>
 
-              <Button
+              {/* <Button
                 variant="outline"
                 size="lg"
                 className="border-purple-500/50 text-purple-300 hover:bg-purple-500/10 px-8 py-4 text-lg rounded-xl backdrop-blur-sm"
               >
                 Voir la démonstration (2min)
-              </Button>
+              </Button> */}
+
+            <span className="relative inline-block overflow-hidden rounded-full p-[1px]">
+                <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+                <div className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-gray-950 px-4 sm:px-8 py-2 text-lg font-medium text-gray-50 backdrop-blur-3xl ">
+                Voir la démonstration (2min)
+                </div>
+              </span>
             </div>
 
             {/* Trust Indicators */}
