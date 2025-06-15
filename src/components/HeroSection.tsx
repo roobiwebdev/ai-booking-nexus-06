@@ -9,16 +9,23 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden ">
+    <>
+      <iframe
+        src="https://peaceful-brand-237536.framer.app/second"
+        style={{ width: '100%', height: '100vh', border: 'none', position:'absolute', top:0, left:0,  }}
+        title="Framer Animation"
+      />
+
+     <section className="relative min-h-screen w-full flex items-center justify-center overflow-hidden ">
       {/* Background Effects */}
-      <div className="absolute inset-0">
+      {/* <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-72 h-72 bg-purple-600/20 md:bg-purple-600/30 rounded-full filter blur-3xl animate-float"></div>
         <div
           className="absolute bottom-20 right-10 w-96 h-96 bg-neon-purple/10 md:bg-neon-purple/20 rounded-full filter blur-3xl animate-float"
           style={{ animationDelay: "2s" }}
         ></div>
         <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-radial from-purple-500/5 to-transparent rounded-full"></div>
-      </div>
+      </div> */}
 
       <div className="container mx-auto px-6 relative z-10">
         <AnimatedSection>
@@ -100,6 +107,8 @@ const HeroSection = () => {
         </div>
       </div>
     </section>
+    </>
+   
   );
 };
 
