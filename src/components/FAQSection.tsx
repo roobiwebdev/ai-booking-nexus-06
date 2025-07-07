@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import {
   Accordion,
   AccordionContent,
@@ -7,33 +7,7 @@ import {
 } from "@/components/ui/accordion";
 import AnimatedSection from "@/components/ui/animated-section";
 
-const API_URL =
-  "https://payload-cms-ai-booking.vercel.app/api/faq/1?depth=2&draft=false";
-
-const FAQSection = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch FAQ data");
-        return res.json();
-      })
-      .then((json) => {
-        if (json && json.faqs && json.faqs.length > 0) {
-          setData(json);
-        } else {
-          setError("No FAQ data found");
-        }
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) return <div>Loading FAQ...</div>;
-  if (error) return <div>Error: {error}</div>;
+const FAQSection = ({ data }) => {
   if (!data) return null;
 
   return (

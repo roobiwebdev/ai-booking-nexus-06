@@ -1,35 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import * as Icons from "lucide-react";
 import AnimatedSection from "@/components/ui/animated-section";
 import { ArrowRight } from "lucide-react";
 
-const API_URL =
-  "https://payload-cms-ai-booking.vercel.app/api/demo/1?depth=2&draft=false";
-
-const DemoSection = () => {
-  const [data, setData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    fetch(API_URL)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to fetch demo section");
-        return res.json();
-      })
-      .then((json) => {
-        if (json && json.features && json.features.length > 0) {
-          setData(json);
-        } else {
-          setError("No demo data found");
-        }
-      })
-      .catch((err) => setError(err.message))
-      .finally(() => setLoading(false));
-  }, []);
-
-  if (loading) return <div>Loading demo section...</div>;
-  if (error) return <div>Error: {error}</div>;
+const DemoSection = ({ data }) => {
   if (!data) return null;
 
   return (
