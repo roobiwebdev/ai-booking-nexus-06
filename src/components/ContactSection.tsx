@@ -117,9 +117,107 @@ const ContactSection = () => {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-6 md:space-y-8">
-                {/* Inputs and selects here, similar to your existing code, but values from formData and onChange setFormData */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Input
+                    placeholder="Votre nom*"
+                    value={formData.name}
+                    onChange={(e) => handleInputChange("name", e.target.value)}
+                    required
+                    className="bg-gray-800/50 border-[#6645E8]/30 text-white placeholder:text-gray-400"
+                  />
+                  <Input
+                    type="email"
+                    placeholder="votre@email.com*"
+                    value={formData.email}
+                    onChange={(e) => handleInputChange("email", e.target.value)}
+                    required
+                    className="bg-gray-800/50 border-[#6645E8]/30 text-white placeholder:text-gray-400"
+                  />
+                </div>
 
-                {/* ... your inputs and selects with handleInputChange ... */}
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Input
+                    type="tel"
+                    placeholder="Téléphone*"
+                    value={formData.phone}
+                    onChange={(e) => handleInputChange("phone", e.target.value)}
+                    required
+                    className="bg-gray-800/50 border-[#6645E8]/30 text-white placeholder:text-gray-400"
+                  />
+                  <Input
+                    placeholder="Nom de votre centre*"
+                    value={formData.company}
+                    onChange={(e) =>
+                      handleInputChange("company", e.target.value)
+                    }
+                    required
+                    className="bg-gray-800/50 border-[#6645E8]/30 text-white placeholder:text-gray-400"
+                  />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-4">
+                  <Select
+                    onValueChange={(value) => handleInputChange("role", value)}
+                  >
+                    <SelectTrigger className="bg-gray-800/50 border-[#6645E8]/30 text-white">
+                      <SelectValue placeholder="Votre fonction*" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="director">
+                        Directeur/Directrice
+                      </SelectItem>
+                      <SelectItem value="pedagogical">
+                        Responsable pédagogique
+                      </SelectItem>
+                      <SelectItem value="quality">
+                        Responsable qualité
+                      </SelectItem>
+                      <SelectItem value="admin">
+                        Responsable administratif
+                      </SelectItem>
+                      <SelectItem value="other">Autre</SelectItem>
+                    </SelectContent>
+                  </Select>
+
+                  <Select
+                    onValueChange={(value) =>
+                      handleInputChange("centerSize", value)
+                    }
+                  >
+                    <SelectTrigger className="bg-gray-800/50 border-[#6645E8]/30 text-white">
+                      <SelectValue placeholder="Taille de votre centre*" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="small">1-50 apprenants</SelectItem>
+                      <SelectItem value="medium">51-200 apprenants</SelectItem>
+                      <SelectItem value="large">201-500 apprenants</SelectItem>
+                      <SelectItem value="enterprise">
+                        500+ apprenants
+                      </SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <Select
+                  onValueChange={(value) => handleInputChange("urgency", value)}
+                >
+                  <SelectTrigger className="bg-gray-800/50 border-[#6645E8]/30 text-white">
+                    <SelectValue placeholder="Quand souhaitez-vous démarrer ?*" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="asap">Dès que possible</SelectItem>
+                    <SelectItem value="month">Dans le mois</SelectItem>
+                    <SelectItem value="quarter">Dans le trimestre</SelectItem>
+                    <SelectItem value="explore">Phase d'exploration</SelectItem>
+                  </SelectContent>
+                </Select>
+
+                <Textarea
+                  placeholder="Décrivez vos principaux défis actuels (optionnel)"
+                  value={formData.needs}
+                  onChange={(e) => handleInputChange("needs", e.target.value)}
+                  className="bg-gray-800/50 border-[#6645E8]/30 text-white placeholder:text-gray-400 min-h-[100px]"
+                />
 
                 <Button
                   type="submit"
