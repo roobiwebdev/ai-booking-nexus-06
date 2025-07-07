@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as Icons from 'lucide-react';
 import AnimatedSection from '@/components/ui/animated-section';
+import LoadingSpinner from './ui/loadingSpinner';
 
 const API_URL =
   "https://payload-cms-ai-booking.vercel.app/api/benefits/1?depth=2&draft=false";
@@ -27,7 +28,7 @@ const BenefitsSection = () => {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <div>Loading benefits...</div>;
+  if (loading) return <LoadingSpinner />;
   if (error) return <div>Error: {error}</div>;
   if (!data) return null;
 
