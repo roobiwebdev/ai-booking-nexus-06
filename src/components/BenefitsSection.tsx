@@ -63,32 +63,30 @@ const BenefitsSection = () => {
         {/* Benefits Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {benefits.map((benefit, index) => {
-            const cardRef = useRef<HTMLDivElement>(null);
-            const shadowRef = useRef<HTMLDivElement>(null);
-
             const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-              if (cardRef.current) {
-                const { left, top } = cardRef.current.getBoundingClientRect();
+              const cardRef = e.currentTarget;
+              const shadowRef = cardRef.querySelector('[data-shadow]') as HTMLDivElement;
+              
+              if (cardRef) {
+                const { left, top } = cardRef.getBoundingClientRect();
                 const x = e.clientX - left;
                 const y = e.clientY - top;
 
-                if (shadowRef.current) {
-                  shadowRef.current.style.top = `${y}px`;
-                  shadowRef.current.style.left = `${x}px`;
-                  shadowRef.current.style.transform = "translate(-50%, -50%)";
-                  (cardRef.current as any).style.setProperty('--cursor-x', `${x}px`);
-                  (cardRef.current as any).style.setProperty('--cursor-y', `${y}px`);
+                if (shadowRef) {
+                  shadowRef.style.top = `${y}px`;
+                  shadowRef.style.left = `${x}px`;
+                  shadowRef.style.transform = "translate(-50%, -50%)";
+                  cardRef.style.setProperty('--cursor-x', `${x}px`);
+                  cardRef.style.setProperty('--cursor-y', `${y}px`);
                 }
               }
             };
 
             return (
-              <AnimatedSection>
+                            <AnimatedSection key={index}>
                 <div 
-                  key={index}
-                  ref={cardRef}
                   onMouseMove={handleMouseMove}
-                  className="relative py-5 px-0 z-20 group overflow-hidden border border-zinc-800 rounded-xl bg-[radial-gradient(500px_circle_at_var(--cursor-x)_var(--cursor-y),#8872FC_0,transparent,transparent_70%)]"
+                  className="relative w-full md:h-56 py-5 px-0 z-20 group overflow-hidden border border-zinc-800 rounded-xl bg-[radial-gradient(500px_circle_at_var(--cursor-x)_var(--cursor-y),#8872FC_0,transparent,transparent_70%)]"
                 >
                   <div className="space-y-4 relative z-10 p-5 bg-[linear-gradient(180deg,_rgba(24,_24,_27,_0.00)_0%,_rgba(24,_24,_27,_0.00)_100%)]">
                     <div className="flex items-center mb-6">
@@ -103,7 +101,7 @@ const BenefitsSection = () => {
                     <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
                   </div>
                   <div
-                    ref={shadowRef}
+                    data-shadow
                     className="bg-[linear-gradient(180deg,_#1E293B_0%,_rgba(136,114,252,0.00)_137.53%,_rgba(32,_69,_129,_0.00)_195%)] blur-[70px] opacity-0 absolute top-0 left-0 w-4/5 h-4/5 duration-150 group-hover:opacity-90"
                   ></div>
                   <div className="absolute inset-[1px] -z-10 rounded-xl bg-gradient-to-tr from-black/90 via-transparent/80 to-transparent/20"></div>
