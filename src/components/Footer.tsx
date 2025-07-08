@@ -12,7 +12,7 @@ const Footer = ({ data }) => {
   if (!data) return null;
 
   return (
-    <footer className="py-16 bg-gray-900/50 border-t border-[#6645E8]/20 w-full overflow-hidden">
+    <footer className="py-18 bg-gray-900/50 border-t border-[#6645E8]/20 w-full overflow-hidden">
       <div className="w-full max-w-[90vw] mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
           {/* Company */}
@@ -27,7 +27,7 @@ const Footer = ({ data }) => {
               {data.companyDescription}
             </p>
             <div className="flex gap-3">
-              {data.socialLinks.map(({ platform, url }, i) => {
+              {(data.socialLinks || []).map(({ platform, url }, i) => {
                 const Icon = iconMap[platform] || Mail;
                 return (
                   <a
@@ -50,7 +50,7 @@ const Footer = ({ data }) => {
               Notre solution
             </h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              {data.solutionLinks.map(({ label, url }, i) => (
+              {(data.solutionLinks || []).map(({ label, url }, i) => (
                 <li key={i}>
                   <a
                     href={url}
@@ -69,7 +69,7 @@ const Footer = ({ data }) => {
               Ressources
             </h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              {data.resourcesLinks.map(({ label, url }, i) => (
+              {(data.resourcesLinks || []).map(({ label, url }, i) => (
                 <li key={i}>
                   <a
                     href={url}
@@ -89,13 +89,13 @@ const Footer = ({ data }) => {
               <div className="flex items-center gap-3">
                 <Phone className="w-4 h-4 text-[#6645E8]" />
                 <span className="text-gray-400 text-sm">
-                  {data.contactInfo.phone}
+                  {data.contactInfo?.phone || ""}
                 </span>
               </div>
               <div className="flex items-center gap-3">
                 <Mail className="w-4 h-4 text-[#6645E8]" />
                 <span className="text-gray-400 text-sm">
-                  {data.contactInfo.email}
+                  {data.contactInfo?.email || ""}
                 </span>
               </div>
               <div className="flex items-center gap-3">
@@ -104,7 +104,7 @@ const Footer = ({ data }) => {
                   className="text-gray-400 text-sm"
                   style={{ whiteSpace: "pre-line" }}
                 >
-                  {data.contactInfo.address}
+                  {data.contactInfo?.address || ""}
                 </span>
               </div>
             </div>
@@ -117,7 +117,7 @@ const Footer = ({ data }) => {
             © {currentYear} {data.companyName}. Tous droits réservés.
           </div>
           <div className="flex flex-wrap gap-4 text-gray-400 text-sm">
-            {data.bottomLinks.map(({ label, url }, i) => (
+            {(data.bottomLinks || []).map(({ label, url }, i) => (
               <a
                 key={i}
                 href={url}
