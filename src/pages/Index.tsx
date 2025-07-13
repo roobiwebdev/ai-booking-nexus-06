@@ -18,7 +18,7 @@ const API_ENDPOINTS = {
   beforeAfter: "https://payload-cms-ai-booking.vercel.app/api/beforeAfter/1?depth=2&draft=false",
   faq: "https://payload-cms-ai-booking.vercel.app/api/faq/1?depth=2&draft=false",
   contact: "https://payload-cms-ai-booking.vercel.app/api/contact/1?depth=2&draft=false",
-  footer: "https://payload-cms-ai-booking.vercel.app/api/footer/1?depth=1&draft=false",
+  footer: "https://payload-cms-ai-booking.vercel.app/api/footer/2?depth=2&draft=false&locale=undefined",
 };
 
 const Index = () => {

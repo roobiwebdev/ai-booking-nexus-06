@@ -12,7 +12,7 @@ const Footer = ({ data }) => {
   if (!data) return null;
 
   return (
-    <footer className="py-18 bg-gray-900/50 border-t border-[#6645E8]/20 w-full overflow-hidden">
+    <footer className="py-16 bg-gray-900/50 border-t border-[#6645E8]/20 w-full overflow-hidden">
       <div className="w-full max-w-[90vw] mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8 md:mb-12">
           {/* Company */}
