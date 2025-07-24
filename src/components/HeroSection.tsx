@@ -9,7 +9,7 @@ interface TrustIndicator {
 
 interface HeroData {
   id: number;
-  iframeUrl?: string;
+  backgroundIframeUrl?: string;
   badgeText: string;
   mainTitle: string;
   gradientTitle: string;
@@ -33,9 +33,9 @@ const HeroSection = ({ data }: { data: HeroData }) => {
 
   return (
     <>
-      {data.iframeUrl && (
+      {data.backgroundIframeUrl && (
         <iframe
-          src={data.iframeUrl}
+          src={data.backgroundIframeUrl}
           style={{
             width: "100%",
             height: "100vh",

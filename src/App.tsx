@@ -7,6 +7,8 @@ import { CMSProvider } from "./components/cms/CMSProvider";
 // import EditButton from "./components/cms/EditButton";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import Preview from "./pages/Preview";
+import CollectionPreview from "./pages/CollectionPreview";
 
 const queryClient = new QueryClient();
 
@@ -19,6 +21,8 @@ const App = () => (
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/preview/:slug" element={<Preview />} />
+            <Route path="/preview/:collection/:id" element={<CollectionPreview />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           {/* <EditButton /> */}
